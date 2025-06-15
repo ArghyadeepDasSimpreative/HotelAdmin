@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import Select from 'react-select';
 
 const CustomSelect = ({ data, config, label, onSelect, defaultValue, width = "300px", isMulti=false }) => {
-  
+  // console.log(data)
   const options = data.map((item) => ({
     value: item[config.key],
     label: item[config.label],

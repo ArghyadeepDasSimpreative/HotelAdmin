@@ -3,3 +3,7 @@
 body {
   font-family: 'Poppins', sans-serif;
 }
+
+.react-multi-carousel-track {
+   height: 100%!important;
+}

@@ -1,9 +1,26 @@
-import React from 'react'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import MainLayout from './layout';
+import DashboardPage from './pages/dashboard';
+import BookingsPage from './pages/bookings';
+import NotFoundPage from './pages/not-found';
+import AuthPage from './pages/auth';
+import "react-multi-carousel/lib/styles.css";
+import { Toaster } from 'react-hot-toast';
 
 export default function App() {
   return (
-    <div className='font-bold text-3xl'>
-      hi
-    </div>
-  )
+    <>
+      <Routes>
+        <Route path="/auth" element={<AuthPage />} />
+        <Route path="/owner" element={<MainLayout />}>
+          <Route path="dashboard" element={<DashboardPage />} />
+          <Route path="bookings" element={<BookingsPage />} />
+        </Route>
+
+        <Route path="*" element={<NotFoundPage />} />
+      </Routes>
+      <Toaster />
+      </>
+
+  );
 }
