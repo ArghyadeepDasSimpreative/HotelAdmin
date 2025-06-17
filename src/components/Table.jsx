@@ -105,6 +105,7 @@ export default function CustomTable({
               { label: '50', value: 50 },
             ]}
             defaultValue={10}
+            value={perPage}
             onSelect={(val) => {
               setPerPage(val.value);
             }}
@@ -124,7 +125,7 @@ export default function CustomTable({
             <button
               key={page}
               onClick={() => handlePageChange(page)}
-              className={`px-3 py-1 text-md rounded ${
+              className={`px-3 py-1 text-md rounded cursor-pointer ${
                 currentPage === page
                   ? 'bg-black text-white'
                   : 'text-gray-700 hover:bg-gray-200'

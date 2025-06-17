@@ -15,7 +15,7 @@ const InputField = ({
   const inputType = type === "password" && showPassword ? "text" : type;
 
   return (
-    <div className="w-full">
+    <div className="w-full !max-w-[600px]">
       {label && <label className="block text-lg text-gray-600 mb-1">{label}</label>}
       <div className="relative w-full">
         {leftItem && (
@@ -28,7 +28,7 @@ const InputField = ({
           value={value}
           onChange={onChange}
           placeholder={placeholder}
-          className={`w-full px-3 py-3 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-0 focus:border-gray-300
+          className={`w-full px-3 py-3 border ${error ? "border-red-500" : "border-gray-300"} rounded-md text-sm focus:outline-none focus:ring-0 focus:border-gray-300
             ${leftItem ? "pl-10" : ""} ${type === "password" ? "pr-10" : ""}
           `}
           {...rest}
@@ -42,7 +42,7 @@ const InputField = ({
           </div>
         )}
       </div>
-      {error && <p className="text-red-500 text-xs mt-1">{error}</p>}
+      {error && <p className="text-red-500 text-md mt-1">{error}</p>}
     </div>
   );
 };

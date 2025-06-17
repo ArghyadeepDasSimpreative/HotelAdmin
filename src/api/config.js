@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const BASE_URL = 'https://hotelbackendtwo.onrender.com';
+export const BASE_URL = 'http://localhost:5300';
 
 export const apiPublic = axios.create({
   baseURL: BASE_URL,
